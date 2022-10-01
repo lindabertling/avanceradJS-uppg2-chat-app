@@ -35,6 +35,10 @@ const server = net.createServer((socket) => {
   });
 });
 
+server.on("error", (err) => {
+  console.log("Something went wrong: ", err);
+});
+
 // specifying what port the server shoulf listen to and printing a message of that in the terminal
 server.listen(8080, () => {
   console.log(`The server is now listening on port: ${server.address().port}`);
